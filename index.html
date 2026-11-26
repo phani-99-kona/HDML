@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NestFinder – Property Discovery Platform</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🏠 NestFinder</h1>
+  <button id="favToggle">♥ Favorites (<span id="favCount">0</span>)</button>
+</header>
+<div class="hero"><h2>Find, filter and compare properties</h2><p>Search by location, price, size, amenities and type. Shortlist favorites and compare up to 3 side by side.</p></div>
+
+<div class="layout">
+  <aside>
+    <label for="q">Search</label><input id="q" placeholder="Title, city or area">
+    <label for="city">City</label><select id="city"><option value="">All cities</option></select>
+    <label for="type">Property type</label><select id="type"><option value="">All types</option></select>
+    <label for="price">Max price: <span id="pv"></span></label><input id="price" type="range" min="20" max="500" step="5" value="500">
+    <label for="beds">Min bedrooms</label><select id="beds"><option value="0">Any</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+    <label for="area">Min area (sq ft)</label><input id="area" type="number" min="0" step="100" placeholder="e.g. 1000">
+    <label>Amenities</label><div class="chk" id="am"></div>
+    <p><button class="btn alt" id="reset" style="width:100%;margin-top:14px">Reset filters</button></p>
+  </aside>
+  <main>
+    <div class="top"><strong id="count"></strong>
+      <select id="sort"><option value="">Sort: Featured</option><option value="pa">Price: Low to High</option><option value="pd">Price: High to Low</option><option value="sd">Area: Largest first</option><option value="nw">Newest first</option></select>
+    </div>
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<div class="bar" id="bar"><span id="cmpTxt"></span><span><button class="btn alt" id="cmpClear">Clear</button> <button class="btn" id="cmpGo">Compare</button></span></div>
+<div class="modal" id="m"><div class="box" id="mb"></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
